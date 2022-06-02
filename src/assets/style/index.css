@@ -1,0 +1,483 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;1,200;1,300;1,400;1,600;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Questrial&display=swap");
+
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 100%;
+    background: var(--white);
+}
+
+::-webkit-scrollbar {
+    width: 0;
+    /* Remove scrollbar space */
+    background: transparent;
+    /* Optional: just make scrollbar invisible */
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: "Questrial", sans-serif;
+    color: #0a0a0a;
+}
+
+.chat__main_body {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.chat_section {
+    background-color: #f5f3fb;
+    flex: .25;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat_section__header {
+    height: 10vh;
+    display: flex;
+    padding: 0 25px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat_header__title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chat_header__title h1 {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.chat_header__counter {
+    height: 25px;
+    width: 25px;
+    border-radius: 15px;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: tomato;
+    color: #ffffff;
+}
+
+.chat_header__search {
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f1f7;
+}
+
+.chat_tab {
+    height: 5vh;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.chat_tab__item {
+    padding: 10px 0;
+}
+
+.chat_tab__active {
+    border-bottom: 2px solid #4849a0;
+    color: #4849a0
+}
+
+.chat_messages {
+    flex: 1;
+    height: 85vh;
+    position: relative;
+}
+
+.chat_messages_card {
+    display: flex;
+    flex-direction: row;
+    padding: 15px 25px;
+    align-items: center;
+    border-bottom: 1px solid #eeeeee ;
+    cursor: pointer;
+}
+
+.chat_messages_card:hover {
+    background-color: #f9ebee;
+    transition: ease-in-out .3s;
+}
+
+.chat_messages_card_profile {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    object-fit: cover;
+}
+
+.chat_message_card_content {
+    margin-left: 25px;
+    flex: 1;
+}
+
+.chat_message_card_content__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.chat_message_card_content__header h4 {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.chat_message_card_content__header span{
+    font-size: 12px;
+    color: #a5a4af
+}
+
+.chat_messages_active {
+    background-color: #f9dbdc;
+}
+
+.chat_message_card_content_body {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.chat_message_card_content_body span {
+    font-size: 12px;
+    color: #fff;
+}
+
+.chat__counter {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    background-color: #f35a5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.chat_messages_newmessage {
+    height: 45px;
+    width: 45px;
+    border-radius: 25px;
+    background-color: #f35a5b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+    z-index: 2;
+}
+
+.chat_messages_newmessage span{
+    color: #fff;
+    font-size: 35px;
+}
+
+.convo_section {
+    background-color: #ffffff;
+    flex: .75;
+}
+
+.convo__header {
+    height: 10vh;
+    background-color: #4849a0;
+    display: flex;
+    flex-direction: row;
+}
+
+.convo__sender__info {
+    flex: .75;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #f5f3fb;
+}
+
+.convo__sender_tag {
+        display: flex;
+        align-items: center;
+        margin-left: 25px;
+        flex: 1;
+}
+
+.sender__profile {
+    height: 50px;
+        width: 50px;
+        border-radius: 20px;
+        object-fit: cover;
+        margin-right: 15px;
+}
+
+.sender__names h3 {
+    margin-bottom: 5px;
+}
+
+.sender__names span {
+    font-size: 14px;
+        color: #a5a4af
+}
+
+.convo__more {
+    height: 45px;
+        width: 45px;
+        border-radius: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #fff;
+        margin-right: 25px;
+}
+
+.convo__my_info {
+    background-color: #fff;
+    flex: .25;
+    padding: 0 25px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: row;
+}
+
+.convo__myinfo_tag {
+    background-color: #f5f3fb;
+    display: flex;
+    padding: 10px;
+    border-radius: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.convo__myinfo_tag:hover {
+    background-color: #f35a5b;
+    color: #fff;
+    transition: ease-in-out .3s;
+}
+
+
+.my__profile {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.convo__down {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.convo__chat_section {
+    background-color: #fff;
+    flex: .75;
+    display: flex;
+    flex-direction: column;
+}
+
+.convo__chat {
+    flex: 1;
+}
+
+.sender__message  {
+    display: flex;
+    max-width: 25vw;
+    margin: 7px 25px;
+    /* background-color: #4849a0; */
+    align-items:flex-end;;
+}
+
+.sender__p {
+    height: 20px;
+    width: 20px;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-right: 10px;
+    margin-bottom: 15px;
+}
+
+.sender_pview {
+    display: flex;
+    align-items: center;
+}
+
+.sender_pview p {
+    background-color: #4849a0;
+    padding: 10px;
+    color: #fff;
+    border-radius: 7px 7px 7px 0px;
+    margin-right: 10px;
+}
+
+.sender__content span {
+    color: #b6b6b7;
+    font-size: 12px;
+    margin-top: -5px;
+}
+
+/* my messages */
+.me__message {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 7px 25px;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+}
+
+.me__content {
+    max-width: 25vw;
+}
+
+.me_pview {
+    display: flex;
+    align-items: center;
+}
+
+.me_pview p {
+    background-color: #4849a0;
+    text-align: right;
+}
+
+.me_timestamp {
+    color: #b6b6b7;
+    font-size: 12px;
+}
+
+.convo_input {
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.convo__inputview {
+    flex: 1;
+    border: 1.75px solid #ececf8;
+    border-radius: 35px;
+    padding: 0 15px;
+    height: 45px;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+
+}
+
+.convo__inputfield {
+    flex: 1;
+    font-size: 16px;
+    border: none;
+    /* font-family: ; */
+}
+
+.convo__inputfield:active {
+    border: none;
+}
+
+.convo__sender {
+    height: 45px;
+    width: 45px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ececf8;
+    border: none;
+}
+
+.convo__profile_info {
+    background-color: #f5f3fb;
+    flex: .25;
+    padding: 0 25px;
+    
+}
+
+.convo__image_section {
+    padding-bottom: 30px;
+    align-items: center;
+    border-bottom: 1px solid #e4e4e6;
+}
+
+.convo__profile_photo {
+    height: 130px;
+    width: 130px;
+    border-radius: 100px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.convo__image_section {
+    padding: 20px 0;
+    display: flex;
+
+}
+
+.convo__media_section {
+    padding: 15px 0;
+    border-bottom: 1px solid #e4e4e6;
+}
+
+.convo__shared__image {
+    height: 100px;
+    width: 100px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.convo__image_gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.see__all {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #f35a5b;
+}
+
+.convo__file_section {
+    padding: 15px 0;
+        border-bottom: 1px solid #e4e4e6;
+
+}
+
+.convo__shared_file_card {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 0;
+    align-items: center;
+}
+
+.convo__shared__file_icon {
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    margin-right: 15px;
+}
