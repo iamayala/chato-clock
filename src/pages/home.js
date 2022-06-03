@@ -1,5 +1,6 @@
 import React from 'react'
 import '../assets/style/index.css'
+import { AiOutlineSearch, AiFillPlusCircle, AiOutlineCloseCircle } from "react-icons/ai";
 
 function Home() {
   return (
@@ -7,14 +8,24 @@ function Home() {
     <section className='chat__main_body'>
         <section className='chat_section'>
             <div className='chat_section__header'>
-                <div className='chat_header__title'>
+
+                {/* <div className='chat_header__title'>
                     <h1>Messages</h1>
                     <div className='chat_header__counter'>
                         <span>3</span>
                     </div>
-                </div>
+                </div> */}
+
+                <div className='chat_header__title'>
+                    <div className='chat_header__searchfield'>
+                    <input placeholder='Search in chat' />
+                    <AiOutlineCloseCircle/>
+
+                    </div>
+                </div> 
+
                 <div className='chat_header__search'>
-                    icon
+                    <AiOutlineSearch size={24} /> 
                 </div>
             </div>
 
@@ -27,7 +38,7 @@ function Home() {
             <div className='chat_messages'>
 
                 <div className='chat_messages_newmessage'>
-                    <span>+</span>
+                    <AiFillPlusCircle size={50} color="#f35a5b" />
                 </div>
 
 
@@ -128,7 +139,7 @@ function Home() {
                             <div className='me__content'>
                                 <div className='me_pview'>
                                     <span>...</span>
-                                    <p>hi</p>
+                                    <p>lorem ipsun</p>
                                 </div>
                                 <div className='me_timestamp'>
                                     <span>today</span>

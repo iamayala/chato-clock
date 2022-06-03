@@ -56,7 +56,21 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex: 1;
 }
+
+.chat_header__searchfield {
+    flex-direction: row;
+    align-items: center;
+    flex: 1;
+}
+
+.chat_header__searchfield input {
+    height: 45px;
+    border-radius: 5px;
+    border: #f5f3fb 2px solid;
+}
+
 
 .chat_header__title h1 {
     font-weight: bold;
@@ -78,11 +92,21 @@ body {
 .chat_header__search {
     height: 45px;
     width: 45px;
-    border-radius: 20px;
+    border-radius: 25px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f2f1f7;
+    background-color: #ececf8;
+    cursor: pointer;
+}
+
+.chat_header__search:hover {
+    background-color: #f35a5b;
+    transition: ease-in-out .3s;
+}
+
+.chat_header__search:hover span {
+    color: "#fff";
 }
 
 .chat_tab {
@@ -180,13 +204,7 @@ body {
 }
 
 .chat_messages_newmessage {
-    height: 45px;
-    width: 45px;
-    border-radius: 25px;
-    background-color: #f35a5b;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    cursor: pointer;
     position: absolute;
     bottom: 25px;
     right: 25px;
@@ -345,8 +363,6 @@ body {
     display: flex;
     flex-direction: row-reverse;
     margin: 7px 25px;
-    align-items: flex-end;
-    /* justify-content: flex-end; */
 }
 
 .me__content {
@@ -355,17 +371,25 @@ body {
 
 .me_pview {
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
 .me_pview p {
     background-color: #4849a0;
-    text-align: right;
+    text-align: left;
+    padding: 10px;
+    color: #fff;
+    border-radius: 7px 7px 0px 7px;
+    margin-left: 10px;
 }
 
 .me_timestamp {
     color: #b6b6b7;
     font-size: 12px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 .convo_input {
